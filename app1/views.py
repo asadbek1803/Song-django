@@ -11,4 +11,10 @@ def song_url(request):
     data = {
         'data_song': Song.objects.all()
     }
-    return  render(request,'song.html',data)
+    return  render(request, 'song.html', data)
+
+def song_url2(request, id):
+    """Songni ustiga bosgandagi holatlar"""
+    data_url = Song.objects.get(id=id)
+
+    return render(request, 'song_about.html', {'Song': data_url})

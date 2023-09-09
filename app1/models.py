@@ -39,13 +39,11 @@ class Song(models.Model):
     def __str__(self):
         return self.title
 
-class SongRecord(models.Model):
-    music = models.ManyToManyField(Song,blank=True,null=True)
-    artist = models.ManyToManyField(Artist,blank=True, null=True)
+
 
 
     def __str__(self):
-        return self.music
+        return self.title
 
 class Album(models.Model):
     title = models.CharField(max_length=50)

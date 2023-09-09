@@ -25,11 +25,11 @@ class Artist(models.Model):
 
 class Song(models.Model):
     janr = (
-        ('rap','Rap'),
-        ('jazz','Jazz'),
-        ('hiphop','HipHop'),
-        ('national','national'),
-        ('rock','Rock')
+        ('rap', 'Rap'),
+        ('jazz', 'Jazz'),
+        ('hiphop', 'HipHop'),
+        ('national', 'national'),
+        ('rock', 'Rock')
     )
     title = models.CharField(max_length=25)
     year = models.DateField(blank=True, null=True)

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All songs</title>
+</head>
+<body>
+    <h3>All songs</h3>
+    <table border="1px solid black" style="border-collapse:collapse; width: 500px;">
+        <thead>
+            <th>
+                Song title
+            </th>
+            <th>
+                Ganre
+            </th>
+        </thead>
+        <tbody>
+            {%for i in data_song%}
+            <td>
+                {{i.title}}
+            </td>
+            <td>
+                {{i.ganre}}
+            </td>
+        </tbody>
+            {%endfor%}
+    </table>
+</body>
+</html>

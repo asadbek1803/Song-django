@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Song App</title>
+    <style>
+            .menu-bar {
+                background-color: rgb(178, 255, 127);
+                text-align: center;
+
+            }
+            .menu_1 {
+
+                border: 1px solid black;
+                display: inline;
+                border-width: 1px;
+
+
+            }
+            .menu-bar:hover {
+                background-color:red;
+                box-shadow: 15px;
+
+            }
+
+
+            #yagona::hover {
+                backgorund-color: blue;
+                box-shadow: 15px;
+            }
+        </style>
 </head>
 <body>
-    <h1 style="text-align: centre; color:yellow;">
+    <div class="menu-bar">
+            <div class="menu">
+                <div class="menu_1">
+                    <a style="display: inline; text-decoration: none;" href="http://127.0.0.1:8000/song/"><i>All Songs</i></a>
+                </div>
+                <div class="menu_1">
+                    <a style="display: inline; text-decoration: none; width: 15px;" href="http://127.0.0.1:8000/admin/"><i>Admin</i></a>
+                </div>
+                <div class="menu_1">
+                    <a style="display: inline; text-decoration: none;" href="http://127.0.0.1:8000/#"><i>All Artists</i></a>
+                </div>
+                <div class="menu_1">
+                    <a style="display: inline; text-decoration: none;" href="http://127.0.0.1:8000/#"><i>Albums</i></a>
+                </div>
+            </div>
+
+
+        </div>
+    <h1 id="yagona" style="text-align: center; color: yellow;">
         Song APP
     </h1>
+    <img style="text-align:center;" src="/image1" alt="Image musicand">
 </body>
 </html>

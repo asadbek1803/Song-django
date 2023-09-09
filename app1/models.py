@@ -19,6 +19,10 @@ class Artist(models.Model):
     about = models.TextField(default="Your about only", blank=True, null=True)
     address = models.CharField(max_length=300)
 
+    def __str__(self):
+        return self.name
+
+
 class Song(models.Model):
     janr = (
         ('rap','Rap'),
@@ -32,11 +36,16 @@ class Song(models.Model):
     ganre = models.CharField(max_length=15, choices=janr)
     artist = models.ManyToManyField(Artist, blank=True, null=True)
 
+    def __str__(self):
+        return self.title
 
 class SongRecord(models.Model):
-    music = models.ForeignKey(Song, on_delete=models.CASCADE)
-    artsit = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    music = models.ManyToManyField(Song,blank=True,null=True)
+    artist = models.ManyToManyField(Artist,blank=True, null=True)
 
+
+    def __str__(self):
+        return self.music
 
 class Album(models.Model):
     title = models.CharField(max_length=50)
@@ -45,4 +54,7 @@ class Album(models.Model):
     song = models.ManyToManyField(Song, blank=True, null=True)
     artist = models.ManyToManyField(Artist, blank=True, null=True)
     album_about = models.TextField(blank=True, null=True, default='About your album')
+
+    def __str__(self):
+        return self.title
 

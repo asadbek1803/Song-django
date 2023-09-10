@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app1.views import main_url, song_url, song_url2
+from app1.views import main_url, song_url, song_url2, delete
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_url),
     path('song/', song_url),
-    path('song_about/<int:id>/', song_url2)
+    path('song_about/<int:id>/', song_url2),
+    path('delete/<int:id>/', delete)
 ]
 
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Albums</title>
+</head>
+<body>
+    <h3>All Albums</h3>
+    <table border="1px solid black" style="border-collapse:collapse; width: 500px;">
+        <thead>
+            <th>
+                Album title
+            </th>
+            <th>
+                Album about
+            </th>
+        </thead>
+        <tbody>
+            {%for i in data_album%}
+            <td>
+                <a style="text-decoration:none;" href="/artist_about/{{i.id}}">
+                    {{i.title}}
+                </a>
+            </td>
+            <td>
+                {{i.about}}
+            </td>
+        </tbody>
+            {%endfor%}
+    </table>
+</body>
+</html>

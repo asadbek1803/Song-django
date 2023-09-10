@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from app1.models import Song, Artist
+from app1.models import Song, Artist, Album
 # Create your views here.
 def main_url(request):
     """Main url"""
@@ -16,6 +16,14 @@ def song_url(request):
     }
     return  render(request, 'song.html', data)
 
+
+def album_url(request):
+
+    data = {
+        'data_album': Album.objects.all()
+    }
+
+    return render(request, 'album.html', data)
 def song_url2(request, id):
     """Songni ustiga bosgandagi holatlar"""
     data_url = Song.objects.get(id=id)
@@ -41,13 +49,13 @@ def delete(request, id):
 
 
 
-    return redirect('http://127.0.0.1:8000/home/success/')
+    return redirect('http://127.0.0.1:8000/home/views/success/')
 
 def delete_a(request, id):
 
     delete = Artist.objects.get(id=id).delete()
 
-    return redirect('http://127.0.0.1:8000/home/success/')
+    return redirect('http://127.0.0.1:8000/home/views/success/')
 
 
 def artist_url2(request, id):

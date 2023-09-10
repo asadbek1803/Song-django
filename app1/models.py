@@ -48,7 +48,7 @@ class Song(models.Model):
 class Album(models.Model):
     title = models.CharField(max_length=50)
     album_img = models.FileField(blank=True, null=True, upload_to='media/album_image')
-    year = models.DateTimeField(default=2023)
+    year = models.DateTimeField()
     song = models.ManyToManyField(Song, blank=True, null=True)
     artist = models.ManyToManyField(Artist, blank=True, null=True)
     album_about = models.TextField(blank=True, null=True, default='About your album')
